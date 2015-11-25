@@ -1,0 +1,32 @@
+        .style1
+        {
+            font-family: "Arial Black";
+            font-weight: bold;
+            color: #000080;
+        }
+        .style3
+        {
+            text-align: center;
+            background-color: #lightblue;
+        }
+        #Tour0
+        {
+            margin-left: 123px;
+        }
+        .style4
+        {
+            font-family: "Arial";
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        .style5
+        {
+            background-color: #000000;
+        }
+        .style6
+        {
+            font-family: "Copperplate Gothic Bold";
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #000000;
+        }
