@@ -1,0 +1,77 @@
+body{margin: 0; padding:0; color: #515862; font-size:12px; font-family:Gotham, Helvetica, Arial, sans-serif; background: #ffffff;}
+a{cursor: pointer; text-decoration:none;}
+
+.clr{clear:both;}
+.center {margin: 0 auto; width: 930px;}
+
+.top_left {float:left; width: 230px;}
+.navbar-header{margin-top:31px;}
+.top_right{float: right; width: 700px;}
+.menu{width: 520px; float:left;}
+.menu .main_menu{list-style:none; margin:0;}
+.navbar-nav li{float:left; padding: 35px 19px 6px;}
+.top_right a{color: #515862;}
+.navbar-nav li.active{background:url('images/bck_active_menu.jpg') no-repeat;}
+.navbar-nav li.active a{color: #ffffff; background: none;}
+.buscar{width: 180px;}
+.buscar a{background:url('images/search.jpg') no-repeat center right; padding: 15px 45px 15px 0; text-align:right;}
+.slide{background:url('images/bck_slide.jpg') repeat-x center center; padding:137px 0;}
+.slide .slide1{text-align:center; color:#ffffff;}
+.slide h1{font-size:45px; margin-top:0px;}
+.slide .btn_learn {margin-top: 100px;}
+.slide .btn_learn a{background:#f98561; padding: 15px 55px; border-radius: 5px;}
+.slide .pagination{float:right; padding:10px 0; margin-top:80px;}
+.services{background:#f4f4f4; position:relative;}
+.services .our_services {top:-15px; left: 45%; position:absolute; background:#2190c1; border-radius: 5px; padding: 10px 25px; color:#ffffff;}
+.services{padding:50px 0;}
+.content_services .details{color:#3e9dd1;}
+.content_services .service{text-align:center;}
+.content_services .service:last-child{margin:0;}
+.portafolio{background:#2e3e4f; padding: 50px 0;}
+.portafolio .port_text{float:left;}
+.portafolio .port_text h2, .portafolio .port_text h3{color:#f98561;}
+.portafolio .port_text p{color:#bcbcbc;} 
+.portafolio .port_more{float:right; }
+.portafolio .port_more a{background:#2190c1; color:#ffffff; border-radius: 5px; padding: 8px 15px;}
+.content_offer{margin-top:10px; padding-bottom:40px; border-bottom:1px solid #d9d9d9;}
+.offer, .testimonial{background:#f4f4f4;}
+.offer .offer_intro{text-align:center;}
+.offer .offer_intro h2, .offer h3, .content_offer .off.search a, .content_offer .off.social a{color:#2190c1;}
+.content_offer .off{float: left; width:220px; margin-right:12px;}
+.content_offer .off:last-child{margin:0;}
+.content_offer .off.web a, .content_offer .off.shop a{border-radius:5px; background:#2190c1; float:right; color:#ffffff; padding: 5px 12px;}
+.content_offer .off.shop a{box-shadow: 0 5px 5px #025568;}
+.testimonial{padding:10px 0 0;}
+.testimonial .test_intro{text-align:center;}
+.testimonial .test_intro h2{color:#2190c1;}
+.testimonial .test_intro p{font-size:18px;}
+.testimonial .test_persons{margin:70px auto 0; width:221px; text-align:center;}
+.testimonial .test_persons p{color:#f98561;}
+.testimonial .test_persons ul{padding:0; margin:0; list-style:none;}
+.testimonial .test_persons ul li{float: left; padding:0 0 10px; margin-right:10px; background:url('images/bck_tes.jpg') no-repeat center bottom;}
+.testimonial .test_persons ul li:last-child{margin:0;}
+.testimonial .test_persons ul li.active{background:url('images/bck_tes_active.jpg') no-repeat center bottom;}
+.foot{background:#2e3e4f; padding:10px 0; }
+.foot h2{color:#f98561;}
+.foot ul{padding:0; list-style:none;}
+.foot .foo{float:left; width: 210px; margin-right:30px; color:#a3afb2;}
+.foot .foo a{color:#2190c1;}
+.foot .foo li, .foot .foo p{font-size:10px;}
+.foot .foo.con{margin:0;}
+.foot .foo.tw li, .foot .foo.nw .nw_text, .foot .foo.pro li{border-bottom: 1px solid #556270;}
+.foot .foo.tw li:last-child, .foot .foo.pro li:last-child{border: none;}
+.foot .foo.nw form{margin-top:15px;}
+.foot .foo.nw form .inputs{margin-bottom: 10px;}
+.foot .foo.nw form .inputs label{color: #2190c1;}
+.foot .foo.nw form .inputs input{margin-top:10px; width:222px;}
+.foot .foo.nw form .submit{text-align:right;}
+.foot .foo.nw form .submit input{background:#2190c1; border-radius: 5px; padding:5px; border:none; color:#ffffff;}
+.foot .foo.pro .image, .foot .foo.pro .pro_text{float:left;}
+.foot .foo.pro .image{width:70px; margin-right: 5px;}
+.foot .foo.pro .pro_text{width:120px;}
+.foot .foo.pro li{margin-top:5px;}
+.foot .foo.con .image, .foot .foo.con .con_text{float:left;}
+.foot .foo.con .image{width:35px; margin-right: 5px;}
+.foot .foo.con .con_text{width:90px;}
+
+.navbar-nav{float: right;}

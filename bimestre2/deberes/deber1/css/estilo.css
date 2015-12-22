@@ -1,0 +1,10 @@
+body{font-size: 12px; color: #ffffff;}
+#menu{background: #323223;}
+#header{background: #ededed;}
+#content_izq{background: #765667;}
+#content_main{background: #ffffff;}
+#content_der{background: #765667;}
+#pie{background: #eeeeee;}
+#pie, #header, #content_main{color: #222222;}
+.aux{background: #898765; padding: 5px 0;}
+#aux_1, #aux_2{border: 1px dashed #222222; border-radius: 5px 5px 0 0;}
