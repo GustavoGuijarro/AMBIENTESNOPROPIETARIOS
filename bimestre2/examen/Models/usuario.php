@@ -12,7 +12,7 @@
 		function identificar($email,$password)
 		{
 			$pass=sha1($password);
-			$sql="SELECT * FROM usuarios WHERE email_usuario='$email' && pass_usuario='$pass'";
+			$sql="SELECT * FROM estudiante WHERE email='$email' && contrasena='$pass'";
 			$resulatdos = $this->conexion->conexion->query($sql);
 			if ($resulatdos->num_rows > 0) {
 				$r=$resulatdos->fetch_array();
@@ -26,7 +26,7 @@
 		
 		function registrar($nombre,$apellido,$email,$password){
 			$pass= sha1($password);
-			$sql="INSERT INTO usuarios VALUES(0,'$nombre','$apellido','$email','$pass')";
+			$sql="INSERT INTO estudiante VALUES(0,'$nombre','$apellido','$email','$pass')";
 			if($this->conexion->conexion->query($sql)){
 				return true;
 			}

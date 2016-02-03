@@ -2,14 +2,16 @@
 <?php 
 session_start();
   if (isset($_SESSION['ingreso']) && $_SESSION['ingreso']=='YES') 
+
   {?>
     <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INGRESO DE MATERIAS</title>
+    <title>RESGISTRO DE MATERIAS</title>
     <link href="../css/estilo.css" rel="stylesheet">
     <script src="../js/jquery.js"></script>
     <script src="../js/myjava.js"></script>
@@ -19,7 +21,7 @@ session_start();
     <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../Resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 
 </head>
  
@@ -32,26 +34,40 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">MATRICULACION</a>
+            <a href="#" class="navbar-brand">REGISTRO</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">BIENVENIDO .....<?php echo $_SESSION['nombre']; ?></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="javascript: void(0)" onclick='cerrar();'>Cerrar Session</a></li>
-                     
-                    </ul>
-                </li>
-                
+                        
             </ul>
+          <!-- lado derecho --->
+            <ul class="nav pull-right">
+            <li id="fat-menu" class="dropdown active">
+              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><strong>Hola! <?php echo $_SESSION['nombre']; ?></strong> <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="cambiar_clave.php" target="admin">Cambiar Contraseña</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="php_cerrar.php"><i class="icon-off"></i> Salir</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--========================================================-->
         </div>
+        <table class="table table-bordered">
+  <tr class="info">
+    <td>
+    	<h3 class="text-info"><img src="../img/admin.jpg" class="img-circle" width="80" height="80"> 
+        Bienvenido /a "<?php echo $_SESSION['nombre'];?>"</h3>
+    </td>
+  </tr>
+</table>
     </nav>
 
    <section>
     <table border="0" align="center">
         <tr>
-            <td width="100"><button id="nuevo-producto" class="btn btn-primary">Nuevo Registro</button></td>
+            <td width="100"><button id="nuevo-producto" class="btn btn-primary">REGISTRO DE MATERIAS</button></td>
 
          
         </tr>
@@ -60,22 +76,21 @@ session_start();
     <div class="registros" id="agrega-registros">
         <table class="table table-striped table-condensed table-hover">
             <tr>
-                <th width="150">Id Usuario</th>
-                <th width="150">Nombre</th>
-                <th width="150">Apellido</th>
-                <th width="150">Email</th>
+                <th width="150">Materia</th>
+                <th width="150">Nivel</th>
+                <th width="150">Profesor</th>
+       
             </tr>
             <?php 
                     include('../Models/conexion1.php');
-                    $registro = mysql_query("SELECT * FROM estudiante ORDER BY id_estudiante ASC");
+                    $registro = mysql_query("SELECT materia.nombre,materia.Profesor, materia.id_nivel FROM materia,estudiante_x_materia,nivel,estudiante WHERE estudiante_x_materia.id_estudiante=estudiante.id_estudiante and 
+                    estudiante_x_materia.id_materia=materia.id_materia and materia.id_nivel=nivel.id_nivel ");
                     while($registro2 = mysql_fetch_array($registro)){
                         echo '<tr>
-                                <td>'.$registro2['id_estudiante'].'</td>
-                                <td>'.$registro2['nombres'].'</td>
-                                <td>'.$registro2['apellidos'].'</td>
-                                <td>'.$registro2['email'].'</td>
-                                <td><a href="javascript:editarProducto('.$registro2['id_estudiante'].');" class="glyphicon glyphicon-edit"></a> 
-                                <a href="javascript:eliminarProducto('.$registro2['id_estudiante'].');" class="glyphicon glyphicon-remove-circle"></a></td>
+                                <td>'.$registro2['nombre'].'</td>
+                                <td>'.$registro2['id_nivel'].'</td>
+                                <td>'.$registro2['Profesor'].'</td>
+                                                     
                             </tr>';     
                     }
             ?>
@@ -101,25 +116,21 @@ session_start();
                         <td width="150">Proceso: </td>
                         <td><input type="text" required="required" readonly="readonly" id="pro" name="pro" /></td>
                     </tr>
+		            <tr>
+		               <td>Selecciones el nivel: </td>
+		                 <td><select required="required" name="tipo" id="tipo">
+		                   <option value="Primero">Primero</option>
+		                   <option value="Segundo">Segundo</option>
+		                   <option value="Tercero">Tercero</option>
+		                   <option value="Cuarto">Cuarto</option>
+		                   <option value="Quinto">Quinto</option>
+		                    <option value="Sexto">Sexto</option>
+		                    </select>
+		                 </td>
+		            </tr>
                     <tr>
                         <td>Materia: </td>
                         <td><input type="text" required="required" name="nombre" id="nombre" maxlength="100" placeholder="Escriba nombre" /></td>
-                    </tr>
-                    <<tr>
-                        <td>Selecciones el nivel: </td>
-                        <td><select required="required" name="tipo" id="tipo">
-                                <option value="Primero">Primero</option>
-                                <option value="Segundo">Segundo</option>
-                                <option value="Tercero">Tercero</option>
-                                <option value="Cuarto">Cuarto</option>
-                                <option value="Quinto">Quinto</option>
-                                <option value="Sexto">Sexto</option>
-                                                           
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>Profesor: </td>
-                        <td><input type="number" required="required" name="telefono" id="telefono" maxlength="100" placeholder="Escriba telefono"/></td>
                     </tr>
                                                              
                 </table>
@@ -134,8 +145,13 @@ session_start();
         </div>
       </div>
       
-    <script src="../Resources/js/jquery-1.11.2.js"></script>
-    <script src="../Resources/js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.11.2.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.11.2.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/additional-methods.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script>
         function cerrar()
         {

@@ -4,9 +4,18 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Aplicacion Web</title>
-
-    <link rel="stylesheet" href="../Resources/css/bootstrap.min.css">
+	<title>Login</title>
+    <link href="../css/estilo.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/myjava.js"></script>
+    <script src="../js/main.js"></script>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 
 </head>
  
@@ -20,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">AplicacionWeb</a>
+            <a href="#" class="navbar-brand">Login</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -40,7 +49,7 @@
                         <div class="alert alert-danger text-center" style="display:none;" id="error">
                             <p>Usuario o Password no identificados</p>
                         </div>                     
-                        <form role="form">
+                        <form role="form" id="login">
                             <div class="form-group">
                                 <label for="email">Email:</label>
                                 <div class="input-group">
@@ -66,7 +75,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h2 class="modal-title">Datos de Usuario</h2>
+                <h2 class="modal-title">REGISTRO DE USUARIO</h2>
               </div>
               <div class="modal-body">
                 <div class="alert alert-success text-center" id="exito" style="display:none;">
@@ -114,8 +123,11 @@
         </div><!-- /.modal -->
     </div>
        
-	<script src="../Resources/js/jquery-1.11.2.js"></script>
-	<script src="../Resources/js/bootstrap.min.js"></script>
+	<script src="../js/jquery-1.11.2.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/additional-methods.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script>
         function confirmar(){
             var email = $('#email').val();

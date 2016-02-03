@@ -51,3 +51,11 @@ section table tr td input{
 	color:#FFF;
 	padding:5px;
 }
+
+#txtBox
+{
+	border-color:#6D83B2;
+	border-style:solid;
+	width:300;
+	height:35;
+}
